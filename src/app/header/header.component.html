@@ -1,0 +1,24 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+   <div class="navbar-header">
+    <a class="navbar-brand">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li >
+        <a routerLink="receipe" routerLinkActive="active" (click)="onClickHeader('receipe')">Receipe</a>
+      </li>
+      <li>
+        <a routerLink="shoppingList" (click)="onClickHeader('shopping')">Shopping List</a>
+     </li>
+    </ul>
+    <div *ngIf="activeHeader=='shopping'||activeHeader=='payment'" (click)="onClickHeader('payment')" id="payment-link" class="nav navbar-nav navbar-right open" appDropdownOpen>
+      <ul class="dropdown">
+       <li><a class="navbar-brand">Place order
+          <span class=""></span> </a></li>
+      </ul>
+    </div>
+
+
+    
+  </div>
+  </nav>

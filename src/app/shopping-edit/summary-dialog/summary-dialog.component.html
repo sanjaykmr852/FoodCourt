@@ -1,0 +1,28 @@
+<div class="modal show" tabindex="-1" role="dialog" id="">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <label>
+            <span class="glyphicon glyphicon-ok"></span>  
+          Order summary
+        </label>
+          <button type="button" class="close" (click)="onClickClose()" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                     <p>
+                       Total Ordered Items {{quantity}} 
+                     </p>
+                     <p>
+                       Total Amount {{amountWithCurrency}}
+                    </p>
+
+        </div>
+        <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Pay Amount</button>
+          <button type="button" (click)="onClickClose()" class="btn btn-warning" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> 

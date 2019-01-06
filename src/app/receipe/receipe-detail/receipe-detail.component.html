@@ -1,0 +1,52 @@
+<div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Receipe-Detail</h3>
+      <p class="card-text">Add Receipes to Shopping List</p>
+      <button class="btn btn-primary" [disabled]="quantity>0?false:true" (click)="addToShoopingList($event)">Add</button>
+      <div class="container">
+        <div class="row" style="padding-top:8px;padding-left: 140px;padding-right: 140px">
+          <img appZoomImage [src]="test.imgPath" alt="dosai" height="100px" width="170px"/>
+        </div>
+        <div class="row" style="padding-top:8px;">
+          <div class="text-input-label">
+              <label>Item Name:</label>
+          </div>
+          <div class="text-input" id="receipe-detail-name">
+              {{test.header}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-input-label">
+              <label style="padding-top: 5px;">No of Quantity</label>         
+          </div>
+          <div class="text-input-small">
+              <input type="number" [(ngModel)]="quantity" (input)="getQuantity($event)" class="form-control pull-right"/>
+             </div>
+        </div>
+        <div class="row" style="padding-top: 6px">
+          <div class="text-input-label">
+              <label for="amount-input">Amount</label>
+          </div>
+          <div style="width:80%;float: left;">
+              <input type="text" id="amount-input" class="form-control text-input-small" [(ngModel)]="test.receipeAmount"  [value]="test.receipeAmount" disabled/>
+          </div>
+
+          <div class="row" *ngIf="quantity>0">
+            <div class="text-input-label">
+              <label>
+                <span class="primary-color"><h3>Total</h3></span>
+              </label>
+            </div>
+            <div class="text-input">
+                <label>
+                    <span class="primary-color"><h3>{{totalAmount}}</h3></span>
+                  </label>
+            </div>
+
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>

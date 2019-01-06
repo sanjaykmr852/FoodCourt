@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-4 " *ngFor="let data of data">
+      <div class="card list-group-item" style="width: 18rem;min-width:323px;">
+        <img class="card-img-top" [src]="data.img" width="286px" height="180px" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{data.itemName}}</h5>
+          <p class="card-text">Number of ordered item is {{data.quantity}}.</p>
+          <p style="color:#337ab7;" class="card-text">Total Amount {{data.totalAmount}}.</p>
+          <a  class="btn btn-primary">Order Confirmed</a>
+        </div>
+      </div>
+    </div>
+
+     <app-summary-dialog *ngIf="service.paymentDialogstatus"></app-summary-dialog>
+
+
+
+</div>

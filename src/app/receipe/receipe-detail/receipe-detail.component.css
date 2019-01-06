@@ -1,0 +1,21 @@
+.text-input-label{
+    width:20%;
+    float: left;
+    text-align: right;
+    padding: 4px 16px;
+}
+.text-input-small{
+    width:80%;
+    float: left;    
+    width: 60px;
+}
+
+.text-input{
+    width:80%;
+    float: left;    
+    padding: 4px 0px;
+}
+
+.primary-color{
+    color: #007bff;
+}

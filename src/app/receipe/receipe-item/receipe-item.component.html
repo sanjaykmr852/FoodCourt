@@ -1,0 +1,17 @@
+<div class="list-group-item" *ngFor="let receipe of receipeList" [id]="receipe.header" (click)="onClickItem($event)">
+  <div class="row">
+    <div class="col-md-12">
+            <div id="img-div" class="pull-right">
+               <img [src]="receipe.imgPath"
+                height="100px" width="170px">
+                </div>
+      <div id="receipe-header">
+        <h4>{{receipe.header}}</h4>
+      </div>
+      <div id="description">
+          {{receipe.description}}
+      </div>
+      </div>
+
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<app-header (selectedHeaderItem)=getSelectedHeader($event)></app-header>
+<div class="container">
+        <!-- <receipe *ngIf="headerSelect==='receipe';else shopping"></receipe> -->
+        <router-outlet></router-outlet>
+        <!-- <ng-template #shopping> -->
+        <!-- <shopping-list></shopping-list> -->
+<!-- </ng-template> -->
+</div>
+
+
