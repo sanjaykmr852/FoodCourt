@@ -12,7 +12,7 @@ export class ShoppingEditComponent implements OnInit {
 
   data:object[]=[];
 
-  constructor(private service:ShoppingListService,private receipeDataService:ReceipeDataService) {
+  constructor(public service:ShoppingListService,private receipeDataService:ReceipeDataService) {
 
    }
 
