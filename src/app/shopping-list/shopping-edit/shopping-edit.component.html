@@ -6,7 +6,12 @@
           <h5 class="card-title">{{data.itemName}}</h5>
           <p class="card-text">Number of ordered item is {{data.quantity}}.</p>
           <p style="color:#337ab7;" class="card-text">Total Amount {{data.totalAmount}}.</p>
-          <a  class="btn btn-primary">Order Confirmed</a>
+          <button [ngClass]="{ 'hide-confirm-button': confirmButtonStatus && confirmbutton.id.search(confirmButtonId)>=0}" (mouseenter)="onEnterConfirmButton(confirmbutton,data)" 
+           class="btn btn-primary minimum-width-button" [id]="data.itemName+'-confirm-button'" 
+           #confirmbutton>Order Confirmed</button>
+          <button [ngClass]="{ 'hide-confirm-button': dangerButton.id.search(deleteButtonId)<0}" (click)="onclickDanger(data)" 
+          (mouseleave)="onLeaveConfirmButton()" [id]="data.itemName+'-delete-button'" #dangerButton
+           class="btn btn-danger minimum-width-button">Cancel Order</button>
         </div>
       </div>
     </div>

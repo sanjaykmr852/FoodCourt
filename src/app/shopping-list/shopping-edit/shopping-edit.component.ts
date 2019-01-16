@@ -12,11 +12,21 @@ export class ShoppingEditComponent implements OnInit {
 
   data:object[]=[];
 
+  confirmButtonStatus=false;
+  confirmButtonId='false';
+  deleteButtonId='invalid';
   constructor(public service:ShoppingListService,private receipeDataService:ReceipeDataService) {
 
    }
 
   ngOnInit() {
+    this.setShopingListData();
+    this.receipeDataService.isPaymentClicked.subscribe((data)=>{
+      this.service.paymentDialogstatus=true;
+    });
+  }
+
+  setShopingListData(){
     var result=[];
     this.service.shoppingList.forEach(function(value,key){
       let imgPath:receipe=this.receipeDataService.receipeImgMap[value.itemName];
@@ -24,9 +34,23 @@ export class ShoppingEditComponent implements OnInit {
         result.push(value);
     },this);
     this.data=result;
-    this.receipeDataService.isPaymentClicked.subscribe((data)=>{
-      this.service.paymentDialogstatus=true;
-    });
   }
 
+  onEnterConfirmButton(confirmbutton,data){
+    this.confirmButtonId=confirmbutton['id'];
+    this.deleteButtonId=data['itemName'];
+    this.confirmButtonStatus=true;
+  }
+
+  onLeaveConfirmButton(){
+    this.confirmButtonId='false';
+    this.confirmButtonStatus=false;
+    this.deleteButtonId='invalid';
+  }
+
+  onclickDanger(data){
+    console.log(data);
+    this.service.removeFromShoppingList(data['itemName']);
+    this.setShopingListData();
+  }
 }

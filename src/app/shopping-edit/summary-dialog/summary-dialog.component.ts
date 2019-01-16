@@ -13,15 +13,16 @@ export class SummaryDialogComponent implements OnInit {
 
   amountWithCurrency;
 
+  amount=0;
+
   constructor(private service:ShoppingListService) { }
 
   ngOnInit() {
-    var amount=0;
     this.service.shoppingList.forEach((value,key)=>{
       this.quantity+=value['quantity'];
-      amount+=+value['totalAmount'].split(' ')[1];
+      this.amount+=+value['totalAmount'].split(' ')[1];
     });
-    this.amountWithCurrency='₹ '+amount;
+    this.amountWithCurrency='₹ '+this.amount;
   }
 
   onClickClose(){

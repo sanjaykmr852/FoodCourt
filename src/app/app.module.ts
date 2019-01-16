@@ -15,6 +15,7 @@ import { DropdownOpenDirective } from './directives/dropdown-open.directive';
 import {ShoppingListService} from './services/shoping-list/shopping-list-service.service'
 import { UrlMapperModule } from './url-mapper/url-mapper.module';
 import { SummaryDialogComponent } from './shopping-edit/summary-dialog/summary-dialog.component';
+import { ShoppingListDirective } from './directives/shopping-list.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SummaryDialogComponent } from './shopping-edit/summary-dialog/summary-d
     ShoppingEditComponent,
     ZoomImageDirective,
     DropdownOpenDirective,
-    SummaryDialogComponent
+    SummaryDialogComponent,
+    ShoppingListDirective
     ],
   imports: [
     BrowserModule,

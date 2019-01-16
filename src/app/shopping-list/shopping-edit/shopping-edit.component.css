@@ -16,3 +16,14 @@
     border-radius: .25rem;
 }
 
+.hide-confirm-button{
+    display: none;
+}
+
+.show-confirm-button{
+    display: block;
+}
+
+.minimum-width-button{
+    min-width: 131px;
+}
